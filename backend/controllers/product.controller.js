@@ -14,7 +14,7 @@ export const getAllProducts = async (req, res) => {
 
 export const getFeaturedProducts = async (req, res) => {
 	try {
-		let featuredProducts = await redis.get("featured_products");
+		let featuredProducts = await redis.get("Service-free-db"); //remember (featured_products)
 		if (featuredProducts) {
 			return res.json(JSON.parse(featuredProducts));
 		}
@@ -30,7 +30,7 @@ export const getFeaturedProducts = async (req, res) => {
 
 		// store in redis for future quick access
 
-		await redis.set("featured_products", JSON.stringify(featuredProducts));
+		await redis.set("Service-free-db", JSON.stringify(featuredProducts));
 
 		res.json(featuredProducts);
 	} catch (error) {
@@ -46,7 +46,7 @@ export const createProduct = async (req, res) => {
 		let cloudinaryResponse = null;
 
 		if (image) {
-			cloudinaryResponse = await cloudinary.uploader.upload(image, { folder: "products" });
+			cloudinaryResponse = await cloudinary.uploader.upload(image, { folder: "learning" }); //products (remember this)
 		}
 
 		const product = await Product.create({
@@ -75,7 +75,7 @@ export const deleteProduct = async (req, res) => {
 		if (product.image) {
 			const publicId = product.image.split("/").pop().split(".")[0];
 			try {
-				await cloudinary.uploader.destroy(`products/${publicId}`);
+				await cloudinary.uploader.destroy(`learning/${publicId}`); //products (remember this)
 				console.log("deleted image from cloduinary");
 			} catch (error) {
 				console.log("error deleting image from cloduinary", error);
@@ -148,7 +148,7 @@ async function updateFeaturedProductsCache() {
 		// The lean() method  is used to return plain JavaScript objects instead of full Mongoose documents. This can significantly improve performance
 
 		const featuredProducts = await Product.find({ isFeatured: true }).lean();
-		await redis.set("featured_products", JSON.stringify(featuredProducts));
+		await redis.set("Service-free-db", JSON.stringify(featuredProducts));
 	} catch (error) {
 		console.log("error in update cache function");
 	}

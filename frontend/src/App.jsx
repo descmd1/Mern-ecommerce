@@ -65,3 +65,118 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import DataTable from './DataTable';
+
+// const App = () => {
+//   // Sample data
+//   const data = [
+//     { id: 1, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 3, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 4, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 5, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 6, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 7, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 8, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 9, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 10, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 11, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 12, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 13, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 14, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 15, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 16, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 17, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 18, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 19, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 20, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 21, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 22, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 23, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 24, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 25, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 26, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 27, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 28, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 29, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 30, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 31, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 32, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 33, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 34, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+// 	{ id: 35, name: 'John Doe', email: 'john@example.com', age: 28, status: 'Active' },
+//     { id: 36, name: 'Jane Smith', email: 'jane@example.com', age: 32, status: 'Inactive' },
+//     // ... more data
+//   ];
+
+//   // Column configuration
+//   const columns = [
+//     { key: 'id', title: 'ID' },
+//     { key: 'name', title: 'Name' },
+//     { key: 'email', title: 'Email' },
+//     { key: 'age', title: 'Age' },
+//     { 
+//       key: 'status', 
+//       title: 'Status',
+//       render: (value) => (
+//         <span style={{ color: value === 'Active' ? 'green' : 'red' }}>
+//           {value}
+//         </span>
+//       )
+//     }
+//   ];
+
+//   return (
+//     <div className="app">
+//       <h1>User Management</h1>
+//       <DataTable 
+//         data={data} 
+//         columns={columns} 
+//         pageSizeOptions={[5, 10, 20]}
+//         defaultPageSize={5}
+//       />
+//     </div>
+//   );
+// };
+
+// export default App;
+
+
+
+
+
+
+
+// import DataTable from './DataTable';
+
+// const App = () => {
+//   const data = [...Array(10000)].map((_, i) => ({
+//     id: i + 1,
+//     name: `Item ${i + 1}`,
+//     category: i % 2 === 0 ? 'A' : 'B',
+//   }));
+
+//   const columns = [
+//     { key: 'id', label: 'ID' },
+//     { key: 'name', label: 'Name' },
+//     { key: 'category', label: 'Category' },
+//   ];
+
+//   return (
+//     <div className="p-4">
+//       <DataTable data={data} columns={columns} filterKey="name" />
+//     </div>
+//   );
+// };
+// export default App;
